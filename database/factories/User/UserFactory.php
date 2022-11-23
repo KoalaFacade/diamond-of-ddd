@@ -1,15 +1,24 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\User;
 
+use Domain\Shared\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Infrastructure\User\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Domain\Shared\User\Models\User>
  */
 class UserFactory extends Factory
 {
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var class-string<Model>
+     */
+    protected $model = User::class;
+
     /**
      * Define the model's default state.
      *
