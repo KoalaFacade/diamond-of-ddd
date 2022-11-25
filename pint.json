@@ -10,7 +10,6 @@
         "explicit_string_variable": true,
         "explicit_indirect_variable": true,
         "method_chaining_indentation": true,
-        "no_blank_lines_after_class_opening": true,
-        "single_trait_insert_per_statement": true
+        "no_blank_lines_after_class_opening": true
     }
 }
