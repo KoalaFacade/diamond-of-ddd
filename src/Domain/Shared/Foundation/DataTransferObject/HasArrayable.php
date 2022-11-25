@@ -1,19 +1,17 @@
 <?php
 
-namespace Domain\Shared\Foundation;
+namespace Domain\Shared\Foundation\DataTransferObject;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
-abstract class DataTransferObjects
+trait HasArrayable
 {
     protected Collection $collection;
 
     protected array $excludedPropertiesOnCreation = [];
 
     protected array $excludedPropertiesOnUpdate = [];
-
-    abstract public static function resolve(array $data);
 
     /**
      * a method that will resolve the inheritance properties

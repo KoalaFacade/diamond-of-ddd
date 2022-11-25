@@ -183,6 +183,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Factory Service Providers...
+         */
+        Infrastructure\User\Providers\FactoryServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 

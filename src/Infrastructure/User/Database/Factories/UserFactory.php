@@ -1,30 +1,27 @@
 <?php
 
-namespace Database\Factories\User;
+namespace Infrastructure\User\Database\Factories;
 
-use Domain\Shared\User\Models\User;
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Model;
+use Domain\Shared\Contracts\Database\Factory;
+use Domain\Shared\User\Models\User as Model;
 use Illuminate\Support\Str;
+use Infrastructure\Shared\Database\CreateNewFactory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Domain\Shared\User\Models\User>
- */
-class UserFactory extends Factory
+class UserFactory extends CreateNewFactory implements Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<Model>
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
-    protected $model = User::class;
+    protected $model = Model::class;
 
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => fake()->name(),
@@ -40,7 +37,7 @@ class UserFactory extends Factory
      *
      * @return static
      */
-    public function unverified()
+    public function unverified(): static
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
