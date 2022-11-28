@@ -32,8 +32,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * The factory that should be defined for dummy data
+     *
+     * @return Factory
+     */
     protected static function newFactory(): Factory
     {
-        return resolve(name: UserFactory::class)->resolveFactory();
+        return app(UserFactory::class)->resolveFactory();
     }
 }
